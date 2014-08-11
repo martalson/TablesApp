@@ -8,10 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		5B180B6D199887810041E54D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B180B6C199887810041E54D /* AppDelegate.swift */; };
-		5B180B6F199887810041E54D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B180B6E199887810041E54D /* ViewController.swift */; };
 		5B180B72199887810041E54D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B180B70199887810041E54D /* Main.storyboard */; };
 		5B180B74199887810041E54D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B180B73199887810041E54D /* Images.xcassets */; };
 		5B180B80199887810041E54D /* TableWithSeguesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B180B7F199887810041E54D /* TableWithSeguesTests.swift */; };
+		5B180B8A19988EBB0041E54D /* myTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B180B8919988EBB0041E54D /* myTableViewController.swift */; };
+		5B180B8C199896650041E54D /* displayCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B180B8B199896650041E54D /* displayCellViewController.swift */; };
+		5B87450C1998CA62003FF78D /* cRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B87450B1998CA62003FF78D /* cRow.swift */; };
+		5B87450E1998D194003FF78D /* wordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B87450D1998D194003FF78D /* wordViewController.swift */; };
+		5B8745101998D1B9003FF78D /* Words.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B87450F1998D1B9003FF78D /* Words.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,12 +32,16 @@
 		5B180B67199887810041E54D /* TableWithSegues.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TableWithSegues.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B180B6B199887810041E54D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B180B6C199887810041E54D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5B180B6E199887810041E54D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5B180B71199887810041E54D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5B180B73199887810041E54D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		5B180B79199887810041E54D /* TableWithSeguesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TableWithSeguesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B180B7E199887810041E54D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B180B7F199887810041E54D /* TableWithSeguesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableWithSeguesTests.swift; sourceTree = "<group>"; };
+		5B180B8919988EBB0041E54D /* myTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = myTableViewController.swift; sourceTree = "<group>"; };
+		5B180B8B199896650041E54D /* displayCellViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = displayCellViewController.swift; sourceTree = "<group>"; };
+		5B87450B1998CA62003FF78D /* cRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cRow.swift; sourceTree = "<group>"; };
+		5B87450D1998D194003FF78D /* wordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = wordViewController.swift; sourceTree = "<group>"; };
+		5B87450F1998D1B9003FF78D /* Words.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Words.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,10 +84,14 @@
 			isa = PBXGroup;
 			children = (
 				5B180B6C199887810041E54D /* AppDelegate.swift */,
-				5B180B6E199887810041E54D /* ViewController.swift */,
 				5B180B70199887810041E54D /* Main.storyboard */,
+				5B180B8919988EBB0041E54D /* myTableViewController.swift */,
+				5B180B8B199896650041E54D /* displayCellViewController.swift */,
+				5B87450D1998D194003FF78D /* wordViewController.swift */,
+				5B87450B1998CA62003FF78D /* cRow.swift */,
 				5B180B73199887810041E54D /* Images.xcassets */,
 				5B180B6A199887810041E54D /* Supporting Files */,
+				5B87450F1998D1B9003FF78D /* Words.swift */,
 			);
 			path = TableWithSegues;
 			sourceTree = "<group>";
@@ -208,8 +220,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B180B6F199887810041E54D /* ViewController.swift in Sources */,
+				5B87450E1998D194003FF78D /* wordViewController.swift in Sources */,
+				5B87450C1998CA62003FF78D /* cRow.swift in Sources */,
 				5B180B6D199887810041E54D /* AppDelegate.swift in Sources */,
+				5B8745101998D1B9003FF78D /* Words.swift in Sources */,
+				5B180B8C199896650041E54D /* displayCellViewController.swift in Sources */,
+				5B180B8A19988EBB0041E54D /* myTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,6 +413,7 @@
 				5B180B85199887810041E54D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5B180B86199887810041E54D /* Build configuration list for PBXNativeTarget "TableWithSeguesTests" */ = {
 			isa = XCConfigurationList;
@@ -405,6 +422,7 @@
 				5B180B88199887810041E54D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
