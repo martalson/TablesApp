@@ -7,9 +7,13 @@
 //
 
 import Foundation
+var words = Words()
 class Words{
-    var words = [String]
+    private var words = [String]()
     func addWord(word: String){
         self.words.append(word)
+    }
+    func value() -> [String]{
+        return self.words
     }
 }

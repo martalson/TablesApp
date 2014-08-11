@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6154.21" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="QSY-yw-eDD">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6205" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="QSY-yw-eDD">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6153.13"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6198"/>
     </dependencies>
     <scenes>
-        <!--My Table View Controller - My Cells-->
+        <!--My Cells-->
         <scene sceneID="I9y-rN-Uf7">
             <objects>
                 <tableViewController id="y6q-IC-oHT" customClass="myTableViewController" customModule="TableWithSegues" sceneMemberID="viewController">
@@ -13,7 +13,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="myCell" id="UyB-5e-Pi1" customClass="cRow" customModule="TableWithSegues">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="myCell" id="UyB-5e-Pi1" customClass="cRow" customModule="TableWithSegues">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UyB-5e-Pi1" id="RxW-gy-cFy">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -23,7 +23,7 @@
                                     <bool key="isElement" value="YES"/>
                                 </accessibility>
                                 <connections>
-                                    <segue destination="ejo-C4-NAK" kind="push" identifier="helloSegue" id="Hq5-nq-low"/>
+                                    <segue destination="kbY-9C-1VG" kind="push" identifier="displaySegue" id="dfY-Wd-MO3"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -36,7 +36,7 @@
                     <navigationItem key="navigationItem" title="My Cells" id="XHI-nK-EjJ">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="hwf-wD-4pz">
                             <connections>
-                                <segue destination="m1Y-yH-IyU" kind="push" identifier="newWord" id="b64-2e-9gM"/>
+                                <segue destination="m1Y-yH-IyU" kind="push" identifier="newWordSegue" id="b64-2e-9gM"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -45,10 +45,37 @@
             </objects>
             <point key="canvasLocation" x="211" y="382"/>
         </scene>
-        <!--View Controller-->
+        <!--Display Cell View Controller-->
+        <scene sceneID="z9O-oE-FjK">
+            <objects>
+                <viewController id="kbY-9C-1VG" customClass="displayCellViewController" customModule="TableWithSegues" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aBO-ue-zqq">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gwS-ah-3pi">
+                                <rect key="frame" x="40" y="253" width="241" height="61"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="qj9-zP-AN3"/>
+                    <connections>
+                        <outlet property="wordLabel" destination="gwS-ah-3pi" id="rbl-NZ-gol"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bct-Qj-1qd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="762" y="834"/>
+        </scene>
+        <!--Word View Controller-->
         <scene sceneID="xZN-cn-LZt">
             <objects>
-                <viewController id="m1Y-yH-IyU" sceneMemberID="viewController">
+                <viewController id="m1Y-yH-IyU" customClass="wordViewController" customModule="TableWithSegues" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gtQ-k9-S7c">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -73,31 +100,21 @@
                                 <state key="normal" title="Create">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="createWordButton:" destination="m1Y-yH-IyU" eventType="touchUpInside" id="fWl-x5-Se5"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="TAl-E5-ITW"/>
+                    <connections>
+                        <outlet property="wordTextField" destination="7Vw-CF-H80" id="Ofm-j2-YqK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RTU-Kw-c3a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="854" y="-387"/>
-        </scene>
-        <!--Display Cell View Controller-->
-        <scene sceneID="yQG-32-I8a">
-            <objects>
-                <viewController id="ejo-C4-NAK" customClass="displayCellViewController" customModule="TableWithSegues" customModuleProvider="target" sceneMemberID="viewController">
-                    <textField key="view" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="YdW-7Q-Jza">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <textInputTraits key="textInputTraits"/>
-                    </textField>
-                    <navigationItem key="navigationItem" id="87G-fS-5oH"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4vt-MU-YDz" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1037" y="382"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ubK-kV-n1s">
@@ -121,6 +138,9 @@
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
+        <simulatedScreenMetrics key="destination" type="retina4">
+            <size key="portraitSize" width="320" height="568"/>
+            <size key="landscapeSize" width="568" height="320"/>
+        </simulatedScreenMetrics>
     </simulatedMetricsContainer>
 </document>

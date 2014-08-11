@@ -9,27 +9,26 @@
 import Foundation
 import UIKit
 class myTableViewController: UITableViewController, UITableViewDelegate, UITableViewDataSource{
-    var objs = ["Hi"]
     override func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
         var cell: UITableViewCell
         cell = self.tableView.dequeueReusableCellWithIdentifier("myCell", forIndexPath: indexPath) as UITableViewCell
-        NSLog("hello")
-        cell.textLabel.text = objs[indexPath.row]
+        cell.textLabel.text = words.value()[indexPath.row]
         return cell
     }
     override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
-        var indexPath: NSIndexPath = self.tableView.indexPathForCell(sender as UITableViewCell)
-        var dc = segue.destinationViewController as displayCellViewController
-        dc.text = sender.text
+        if(segue.identifier == "displaySegue"){
+            var indexPath: NSIndexPath = self.tableView.indexPathForCell(sender as UITableViewCell)
+            var dc = segue.destinationViewController as displayCellViewController
+            dc.text = words.value()[indexPath.row]
+        }
     }
     override func tableView(tableView:UITableView, numberOfRowsInSection: Int) ->Int{
-        return objs.count
+        return words.value().count
     }
     override func numberOfSectionsInTableView(tableView: UITableView!) -> Int {
         return 1
     }
     override func viewWillAppear(animated: Bool) {
-        
         self.tableView.reloadData()
     }
 }

@@ -10,10 +10,10 @@ import Foundation
 import UIKit
 class displayCellViewController: UIViewController {
     
-    @IBOutlet strong var helloLable: UILabel = UILabel()
+    @IBOutlet var wordLabel: UILabel!
     var text: String = ""
     override func viewDidLoad() {
-        self.helloLable.text = text
+        self.wordLabel.text = text
     }
     
 }
